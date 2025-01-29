@@ -1,0 +1,27 @@
+<html>
+<head>
+    <script type="text/javascript">
+    <!--
+        function openLookupWin() {
+            var fieldName = document.forms['myForm'].elements['fieldName'].value;
+           window.open('pop.html?fieldName=' + escape(fieldName), '', '');
+		   
+		   
+			//window.open('pop.html');
+        }
+    //-->
+    </script>
+</head>
+
+<body>
+    <form name="myForm">
+    <input type="text" name="fieldName" />
+      <input type="text" name="searchCriteria" /> <a href="#" onClick="openLookupWin();">Lookup</a>
+    </form>
+    to install: use form name
+
+control name.
+
+tool: view source
+</body>
+</html>

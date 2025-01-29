@@ -1,0 +1,21 @@
+
+<script type="text/javascript">
+
+//will work if accessed via http...
+
+var ex=document.referrer;
+ex=ex.split('?')[0];
+//alert(ex);
+
+
+//identify page name...
+var sPath = ex;
+var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+alert(sPage);
+
+if(sPage=="page1.html"){
+	alert('...')
+}
+
+
+</script>

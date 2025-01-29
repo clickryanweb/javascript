@@ -1,0 +1,79 @@
+
+
+//gpt
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Example</title>
+  <style>
+    /* Styles for the popup */
+    #popup-container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+    }
+
+    /* Styles for the overlay background */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9998;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Popup container -->
+  <div id="popup-container">
+    <p>This is a popup!</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <!-- Overlay background -->
+  <div id="overlay"></div>
+
+  <script>
+    // Check if the popup cookie exists
+    if (document.cookie.indexOf("popupShown=true") === -1) {
+      // If the cookie does not exist, show the popup
+      showPopup();
+    }
+
+    // Function to show the popup
+    function showPopup() {
+      document.getElementById("popup-container").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+
+      // Set a cookie to remember that the popup has been shown
+      document.cookie = "popupShown=true; expires=Session; path=/";
+    }
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById("popup-container").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+
+
+

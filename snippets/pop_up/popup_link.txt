@@ -1,0 +1,24 @@
+ <script language="JavaScript">
+
+function openWin(URL, windowWidth, windowHeight)
+{ 
+
+newWindow = window.open (URL,name,"width="+windowWidth+",height="+windowHeight+",scrollbars=yes,resizable=no");
+newWindow.focus();
+}
+
+</script>
+
+
+
+
+
+<a href="dti_worldwide.asp" onClick="openWin('dti_worldwide.asp','550', '250')"></a> 
+
+<a href="javascript:doThePopUp()">
+
+
+onclick="var newWindow=window.open(this.href, 'pop', 'width=600,height=400,scrollbars=yes,resizable=yes,location=no,status=yes,toolbar=no,menubar=no');newWindow.focus();return false;"
+
+
+

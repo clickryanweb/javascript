@@ -1,0 +1,8 @@
+function pad2(number) {
+   //01 vs 1 ctrl naming in ccs...
+      
+   var mynum=number * 1;
+
+     return (mynum < 10 ? '0' : '') + mynum;
+   //document.write(pad2(0) + '<br />');
+}

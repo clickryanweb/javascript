@@ -1,0 +1,8 @@
+
+
+function myfunc(mylink){
+
+    window.location.href="event_pay.php?event=" + mylink;
+}
+
+

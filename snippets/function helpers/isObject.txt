@@ -1,0 +1,13 @@
+function isObj(test) {
+   // return test.constructor === Object;
+    var codeName = document.getElementById(test);
+	if (codeName != null){
+		return true;
+	}
+	else{
+		return false;
+	
+	}
+	
+
+}

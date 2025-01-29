@@ -1,0 +1,11 @@
+
+
+function declaration vs function expression (prefered way)
+
+
+	function declaration is hoisted, may refer to top data as reference
+
+
+
+
+

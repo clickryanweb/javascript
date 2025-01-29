@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+<script language="javascript">
+
+function validchar(strString)
+   {
+     var strValidChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_";
+     var strChar;
+     var blnResult = true;
+       if (strString.length == 0) return false;
+       for (i = 0; i < strString.length && blnResult == true; i++)
+         {
+           strChar = strString.charAt(i);
+           if (strValidChars.indexOf(strChar) == -1)
+             {
+              blnResult = false;
+             }
+         }
+        return blnResult;
+   }
+   
+
+function checkform(x)
+{
+if (validchar(x.txt1.value) == false){
+	        alert("vddfvdfv");
+			x.txt1.focus()
+			x.txt1.select()
+            return false;
+			}
+	} 
+</script>
+<body >
+<form id="form1" name="x" method="post" action="invalid_chars.html" onsubmit='return checkform(this)'>
+  <input name="txt1" type="text" id="txt1" />
+  <label>
+  <input type="submit" name="Submit" value="Submit" />
+  </label>
+</form>
+</body>
+</html>

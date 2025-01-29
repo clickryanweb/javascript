@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<p style="text-align:center;" id="thetime"> </p>
+
+
+<script type="text/javascript">
+	
+	
+
+
+const d = new Date();
+var month = d.getMonth()+1;
+var day = d.getDate();
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+  var dayOfWeek = new Date(d).getDay();    
+  var dname = isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
+
+
+themonth = monthNames[d.getMonth()];
+var output = ((''+day).length<2 ? '0' : '') + day + ' ' +d.getFullYear();
+
+//return dname + ', ' + themonth + ', ' +  output;
+
+//$('#thetime').val(dname + ', ' + themonth + ', ' +  output);
+
+//dname + ', ' + themonth + ', ' +  output;
+
+document.getElementById('thetime').innerHTML = dname + ', ' + themonth + ', ' +  output;
+	
+
+</script>
+
+
+</body>
+
+
+
+</html>

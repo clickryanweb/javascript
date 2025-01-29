@@ -1,0 +1,53 @@
+<html>
+<body onload="updateclock()">
+
+
+    <div id="clock"> </div>
+
+<script type="text/javascript">
+	
+
+//alert(updateclock());
+
+
+
+function getFormattedTime() {
+    var today = new Date();
+    var y = today.getFullYear();
+    // JavaScript months are 0-based.
+    var m = today.getMonth() + 1;
+    var d = today.getDate();
+    var h = today.getHours();
+    var mi = today.getMinutes();
+    var s = today.getSeconds();
+    return h + "" + mi + "" + s;
+}
+
+
+
+function updateclock() {
+
+    function pad(n) {
+         return (n < 10) ? '0' + n : n;
+    }
+
+    var time = new Date();
+    var hours = time.getHours();
+    var minutes = time.getMinutes();
+
+    if (hours > 12) {
+        hours -= 12;
+    } else if (hours === 0) {
+        hours = 12;
+    }
+
+    var todisplay = pad(hours) + ':' + pad(minutes);
+    document.getElementById("clock").innerHTML = todisplay;
+}
+
+
+</script>
+
+
+</body>
+</html>

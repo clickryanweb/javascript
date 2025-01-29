@@ -1,0 +1,10 @@
+var date = new Date()
+var curr_date = date.getDate();
+var curr_month = date.getMonth();
+curr_month = curr_month + 1;
+var curr_year = date.getFullYear();
+
+//Now i can get my required date in my desired format. For Example,
+// curr_date + '/'+ curr_month + '/'+ curr_year;
+
+alert(curr_month + '/'+ curr_date + '/'+ curr_year);

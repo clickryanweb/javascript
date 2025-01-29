@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script language="javascript">
+var DateDiff = {
+ 
+    inDays: function(d1, d2) {
+        var t2 = d2.getTime();
+        var t1 = d1.getTime();
+ 
+        return parseInt((t2-t1)/(24*3600*1000));
+    },
+ 
+    inWeeks: function(d1, d2) {
+        var t2 = d2.getTime();
+        var t1 = d1.getTime();
+ 
+        return parseInt((t2-t1)/(24*3600*1000*7));
+    },
+ 
+    inMonths: function(d1, d2) {
+        var d1Y = d1.getFullYear();
+        var d2Y = d2.getFullYear();
+        var d1M = d1.getMonth();
+        var d2M = d2.getMonth();
+ 
+        return (d2M+12*d2Y)-(d1M+12*d1Y);
+    },
+ 
+    inYears: function(d1, d2) {
+        return d2.getFullYear()-d1.getFullYear();
+    }
+}
+ 
+var dString = "9/13/2011";
+var  d2= new Date(dString);
+var d1 = new Date();
+ var qwe=DateDiff.inMonths(d1, d2)
+alert(qwe);
+</script>
+
+</head>
+
+<body>
+</body>
+</html>

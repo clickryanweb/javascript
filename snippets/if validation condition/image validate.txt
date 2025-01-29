@@ -1,0 +1,3 @@
+if (document.getElementById("logo-div").style.backgroundImage.indexOf("null.gif") > 0){
+    document.getElementById("logo-div").style.backgroundImage = getBaseURL()+"url(images/plant.gif)";
+}

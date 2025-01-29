@@ -1,0 +1,34 @@
+
+<html>
+<script language="javascript">
+<!--
+function go(action, i, title) 
+{
+if (action=="delete") {
+			if (i>=0) {
+						if (confirm("Are you sure you want to delete page: " + title)) {
+						location.href = "mod_pages.php?reqpass=delete_page&delpass=" + i;}
+			}
+			else{
+				alert("Click on the page you wish to delete.");
+			}
+}
+			
+			
+			
+if (action=="panels") {
+			if (i>=0) {
+				if (confirm("Are you sure you want to delete panel: " + title)) {
+						location.href = "mod_pages.php?reqpass=delete_panel&delpass=" + i;}
+			}
+			else{
+				alert("Click on the page you wish to delete.");}
+			}
+}
+
+//-->
+</script>
+<body>
+<a href=# onClick="go('delete', '2','title'); return false;">delete</a>
+</body>
+</html>

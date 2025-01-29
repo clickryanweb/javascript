@@ -1,0 +1,10 @@
+for (i=1;i<50;i++)
+  {
+
+ 	if(document.getElementById(ctrl_1+ pad2(i) +netsales2).value==""){
+	  	
+    	break;
+    	}	
+   //compute;
+	document.getElementById(ctrl_1+ pad2(i) +netsales2).value = "..."
+  }

@@ -1,0 +1,41 @@
+
+
+https://www.w3schools.com/js/js_switch.asp
+
+
+
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+
+
+https://www.w3schools.com/Jsref/jsref_switch.asp
+
+
+
+var text;
+var fruits = document.getElementById("myInput").value;
+
+switch(fruits) {
+  case "Banana":
+    text = "Banana is good!";
+    break;
+  case "Orange":
+    text = "I am not a fan of orange.";
+    break;
+  case "Apple":
+    text = "How you like them apples?";
+    break;
+  default:
+    text = "I have never heard of that fruit...";
+}
+
+

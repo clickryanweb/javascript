@@ -1,0 +1,20 @@
+
+
+function asdasd(zxc){
+
+
+var myloc = window.location.href;
+var locarray = myloc.split("/");
+delete locarray[(locarray.length-1)];
+var arraytext = locarray.join("/");
+//alert(arraytext);
+//document.location=arraytext;
+
+var asd=zxc.replace(arraytext, '');
+
+//var sPath = window.location.pathname;
+var sPage = asd.substring(asd.lastIndexOf('/') + 1);
+// //try var sPage = asd.substring(asd.lastIndexOf('=') + 1);
+
+alert(sPage);
+}

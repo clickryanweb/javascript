@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<script language="javascript">
+function qwe(){
+var c= 'e'
+var query= '?a=b&c='+encodeURIComponent(c);
+var uri= '#?query='+encodeURIComponent(query);
+window.location= uri;
+
+}
+
+function relocate(select)
+{
+var addQuery = select.options[select.selectedIndex].value;
+if(!addQuery) return; /* no selection */
+//we need only yes
+if (addQuery==1){
+var currQuery = location.search.substring(1);
+location.href += (currQuery?"&":"?") +"cc="+addQuery;
+}
+
+}
+
+
+function relocate2()
+{
+//var addQuery = select.options[select.selectedIndex].value;
+//if(!addQuery) return; /* no selection */
+//we need only yes
+
+var currQuery = location.search.substring(1);
+//location.href += (currQuery?'':'?');
+alert("qwe...");
+location.href +=qstring.html+(currQuery?"":"?");
+
+
+}
+
+</script>
+<body onload="">
+
+<select onchange="relocate(this)"><option value="">Choose..<option value="1">Yes<option value="0">No</select>
+
+
+<p>&nbsp;</p>
+<table width="194" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr>
+    <td width="21" height="17"></td>
+    <td width="117"></td>
+    <td width="56"></td>
+  </tr>
+  <tr>
+    <td height="45"></td>
+    <td valign="top" bgcolor="#0033FF" onclick="relocate2()"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td height="24"></td>
+    <td>&nbsp;</td>
+    <td></td>
+  </tr>
+</table>
+</body>
+</html>

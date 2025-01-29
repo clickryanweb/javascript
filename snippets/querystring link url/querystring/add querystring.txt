@@ -1,0 +1,21 @@
+function gosbu(zxc){
+	//alert(zxc);
+	var myURL = document.location;
+	document.location = myURL + "&mysbu="+zxc;
+	alert(document.location);
+
+}
+
+
+
+
+The location object has a number of useful properties too:
+
+hash            Returns the anchor portion of a URL
+host            Returns the hostname and port of a URL
+hostname        Returns the hostname of a URL
+href            Returns the entire URL
+pathname        Returns the path name of a URL
+port            Returns the port number the server uses for a URL
+protocol        Returns the protocol of a URL
+search          Returns the query portion of a URL

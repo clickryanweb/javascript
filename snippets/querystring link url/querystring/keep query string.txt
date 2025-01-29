@@ -1,0 +1,30 @@
+function relocate2()
+{
+//var addQuery = select.options[select.selectedIndex].value;
+//if(!addQuery) return; /* no selection */
+//we need only yes
+
+var currQuery = location.search.substring(1);
+location.href += (currQuery?"":"?");
+
+
+}
+
+
+
+
+or
+
+// opener...
+
+<script language=javascript>
+var currQuery = location.search.substring(1);
+//location.href += (currQuery?"":"?");
+
+alert('Post successful.');
+
+//alert("customer_page.aspx?"+currQuery);
+window.opener.location.href="customer_page.aspx?"+currQuery;
+
+window.close();
+</script>

@@ -1,0 +1,18 @@
+
+for mvc urls...
+
+<script type="text/javascript">
+
+var myloc = window.location.href;
+var locarray = myloc.split("/");
+delete locarray[(locarray.length-1)];
+var arraytext = locarray.join("/");
+
+str = arraytext.slice(0, -1);
+
+var lastPart = str.split("/").pop();
+
+alert(lastPart);
+
+</script>
+

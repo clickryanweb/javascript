@@ -1,0 +1,33 @@
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all links within the elementor-image-gallery div
+    var galleryLinks = document.querySelectorAll('.elementor-image-gallery a');
+
+    // Loop through each link and add a click event listener
+    galleryLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            
+            // Show an alert with the href of the clicked link
+            ///alert('... ' + link.getAttribute('href'));
+            
+            let thelink = link.getAttribute('href');
+            
+            // Optionally, navigate to the link's href after the alert
+            // window.open(link.href, '_blank'); // Open link in new tab/window
+            
+                
+            // Conditionally redirect based on the link's href
+            if (thelink === 'https://arzoscs.ph/arzo/') {
+                 window.open("https://www.arzohotels.com/", '_blank');
+            } 
+            
+            
+            
+            
+        });
+    });
+});
+
+

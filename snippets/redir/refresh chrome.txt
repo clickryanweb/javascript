@@ -1,0 +1,22 @@
+<a href="javascript:location.reload(true)">Refresh this page</a>
+
+
+
+//refresh main page...
+window.top.location.reload();
+
+
+
+
+window.top.location.href()
+
+or
+
+
+<a href="..." target="_top">link</a>
+
+
+
+//chrome
+
+<script language=javascript>top.location.assign("'.$Redirect.'")</script>

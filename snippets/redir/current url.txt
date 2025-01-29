@@ -1,0 +1,7 @@
+
+
+
+var sPath =window.location.href;
+
+
+alert(sPath);

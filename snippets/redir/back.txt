@@ -1,0 +1,25 @@
+
+https://stackoverflow.com/questions/982254/page-history-back-button-exists
+
+
+ <script>
+
+if (history.length) {
+    //There is history to go back to
+    history.go(-1);
+}
+else{
+
+	//if no history, go back home...
+	window.location.replace("/");
+
+}  
+
+</script>
+
+
+history.go(-1);
+or
+
+history.back();
+

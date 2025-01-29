@@ -1,0 +1,13 @@
+
+let backpackContents = ["piggy", "headlamp", "pen"];
+
+console.log(backpackContents);
+
+// backpackContents.forEach(function (item) {
+//   item = `<li>${item}</li>`;
+//   console.log(item);
+// });
+
+
+
+

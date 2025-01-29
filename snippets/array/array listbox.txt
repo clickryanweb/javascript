@@ -1,0 +1,27 @@
+
+
+https://stackoverflow.com/questions/32925880/using-javascript-to-loop-through-drop-down-html-array
+
+<form name="demo">
+  <table id="demo">
+    <th>Demographics</th>
+    <tr>
+      <td>Sex</td>
+      <td>
+        <select id="m">
+
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+
+var sex = ["male", "female", "unknown"];
+
+for (i = 0; i < sex.length; i++) {
+  var opt = document.createElement("option");
+  document.getElementById("m").innerHTML += '<option id="' + i + '">' + sex[i] + '</option>';
+}
+
+

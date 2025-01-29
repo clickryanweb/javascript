@@ -1,0 +1,31 @@
+
+
+https://stackoverflow.com/questions/9005778/javascript-push-array-onto-array-with-for-loop
+
+
+
+function test() {
+    var sub_array = [];
+  
+   for (var i = 1; i <= 3; i++) {
+        sub_array.push(i);
+    }
+
+    alert(sub_array);
+}
+
+
+
+
+function test() {
+    var sub_array = [];
+    var super_array = [];
+    for (var i = 1; i <= 3; i++) {
+        sub_array.push(i);
+        super_array.push(sub_array.slice(0));
+    }
+    alert(super_array);
+}
+
+
+

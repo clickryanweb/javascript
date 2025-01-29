@@ -1,0 +1,8 @@
+
+
+	- map() method
+		- to create a new array
+		- need something further with the data
+
+
+

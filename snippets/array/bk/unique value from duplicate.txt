@@ -1,0 +1,17 @@
+
+
+https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
+
+
+
+const cars = ['Volvo', 'Jeep', 'Volvo', 'Lincoln', 'Lincoln', 'Ford'];
+const uniqueCars = Array.from(new Set(cars));
+console.log(uniqueCars);
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+<html>
+<head>
+
+<script type="text/javascript">
+
+	var tSec;
+   var count = 0;
+
+            function timerGo() {
+                if (count < 6) {
+                    //var output = document.getElementById("txt");
+                    tSec = count;
+                    count++;
+					
+					document.getElementById("timer").innerHTML = "...<br>" + tSec ;
+					
+                    setTimeout(function () { timerGo(); }, 1000);
+                } else {
+					document.getElementById("timer").innerHTML = "...<br> <a href=#> Process taking too long. click here to continue. </a>"  ;
+                    count = 0;
+                }
+            }
+
+
+
+            function startTimer() {
+          
+                   // setTimeout(function () { timerGo(); }, 1000);
+				    setTimeout(function(){
+					//alert("Hello")
+					top.location.assign("'.$Redirect.'");
+				}, 3000);
+                
+            }
+
+
+
+
+
+window.onload = startTimer;
+
+</script>
+</head>
+<body bgcolor="#000000">
+<div id="timer"></div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+
+<!doctype html>
+
+
+<html>
+
+
+    <head>
+        <script>
+            var count = 0,
+                isRunning = false;
+
+
+            function timerGo() {
+                if (count < 21) {
+                    var output = document.getElementById("txt");
+                    output.value = count;
+                    count++;
+                    setTimeout(function () { timerGo(); }, 1000);
+                } else {
+                    isRunning = false;
+                    count = 0;
+                }
+            }
+
+
+
+            function startTimer() {
+                if (isRunning) {
+                    // Do nothing.
+
+                } else {
+                    isRunning = true;
+                    setTimeout(function () { timerGo(); }, 1000);
+                }
+            }
+
+        </script>
+
+
+    </head>
+
+
+    <body onLoad="startTimer();">
+        <input type="text" id="txt">
+
+
+    </body>
+
+
+</html>

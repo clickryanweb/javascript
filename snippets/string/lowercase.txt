@@ -1,0 +1,7 @@
+var str = "Hello World!";
+var res = str.toLowerCase();
+
+
+//The result of res will be:
+
+hello world!

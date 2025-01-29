@@ -1,0 +1,7 @@
+
+
+var str = "HELLO WORLD";
+var n = str.charAt(2)
+
+The result of n will be:
+L

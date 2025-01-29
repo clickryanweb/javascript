@@ -1,0 +1,16 @@
+
+
+https://www.w3schools.com/jsref/jsref_endswith.asp
+
+
+var str = "Hello world, welcome to the universe.";
+var n = str.endsWith("universe.");
+
+
+            if(theseloptions.endsWith("&")){
+                theseloptions = theseloptions.slice(0, -1);
+            }
+
+
+
+

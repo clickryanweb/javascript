@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Javascript Time</title>
+
+
+
+<script type="text/javascript">
+var timerID = null;
+
+function showTime(){
+    var objTimer = new Date();
+    var tHour = objTimer.getHours();
+    var tMin = objTimer.getMinutes().toString();
+    var tSec = objTimer.getSeconds().toString();
+    var ap = "AM";
+    
+    if(tHour > 11)
+        ap = "PM";
+    
+    if(tHour > 12)
+        tHour = tHour - 12;
+    
+    if(tHour == 0)
+        tHour = 12;
+        
+    if(tMin.length == 1)
+        tMin = "0" + tMin;
+
+    if(tSec.length == 1)
+        tSec = "0" + tSec;
+    
+    document.getElementById("timer").innerHTML = tHour + ":" + tMin + ":" + tSec + " " + ap;
+    document.getElementById("qwe").value = tHour + ":" + tMin + ":" + tSec + " " + ap;
+    
+    timerID = setTimeout("showTime()", 1000);
+}
+
+window.onload = showTime;
+</script>
+
+
+</head>
+<body>
+<div id="timer"></div>
+
+<input type="text" name="qwe" id="qwe">
+</body>
+</html>

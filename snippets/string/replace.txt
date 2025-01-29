@@ -1,0 +1,11 @@
+
+//remove microsoft in string...
+
+
+var str = "Visit Microsoft!";
+
+
+var res = str.replace("Microsoft", "W3Schools"); 
+
+
+

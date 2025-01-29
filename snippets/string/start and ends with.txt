@@ -1,0 +1,26 @@
+
+
+https://linuxhint.com/get-substring-before-specific-character-javascript/
+
+
+
+
+
+<script type="text/javascript">
+
+let string = 'harry_and_james';
+
+console.log("The given string is:", string)
+
+let subBefore = string.split('_')[0];
+
+let subBefore1 = string.split('_')[1];
+
+console.log("The substrings before the specific character are:", subBefore + subBefore1);
+
+</script>
+
+
+output: harryand
+
+

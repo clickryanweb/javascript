@@ -1,0 +1,35 @@
+
+
+http://jsfiddle.net/qHL8Z/3/
+
+
+http://jsfiddle.net/BrettWilliams/2y4dgoL4/
+
+
+<input type="number" id="input" />
+<input id="stop" type="button" value="stop"/>
+<input id="start" type="button" value="start"/>
+
+
+
+<script>
+
+var timer = null, 
+    interval = 1000,
+    value = 0;
+
+$("#start").click(function() {
+  if (timer !== null) return;
+  timer = setInterval(function () {
+      value = value+1;
+      $("#input").val(value);
+  }, interval); 
+});
+
+$("#stop").click(function() {
+  clearInterval(timer);
+  timer = null
+});
+
+
+</script>

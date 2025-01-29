@@ -1,0 +1,52 @@
+
+
+
+- Ask around unless you know how to do this. 
+
+- Bring a PDF Floor plan into database 
+	- and locate icons on it representing the physical location 
+		- of an asset on that floor plan . 
+
+	- The asset will not move from that location. 
+
+	- The user has the ability to relocate if privileges are granted. 
+
+	- The asset icon is illuminated if there is a task against it. 
+
+	- The asset icon is turned off when all work is complete. 
+
+
+>
+
+- Log on to the MicoTech app to see what I am talking about. 
+
+	- It is a live app so be careful. 
+	- Look at the way we are applying filters. 
+	- Also look at how the floors display 
+		- how many inspections are left based on filters applied. 
+
+>
+
+- I’ll send a screen shot over of exactly where to go in app. 
+	- See if you can figure out how to do it with a pdf.
+
+> 
+
+-----------------------------
+
+- scale of the (floorplan)?
+
+
+-- not pdf, image instead
+	- svg
+
+- functions of features
+
+
+- competitors?
+	- web based?
+
+
+
+
+

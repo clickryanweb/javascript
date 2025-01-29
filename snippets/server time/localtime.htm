@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Dynamic Drive DHTML Scripts- Local Time script</title>
+
+<link rel="stylesheet" type="text/css" href="localtime_files/mainstyle.css">
+
+<style type="text/css">
+
+.bigbox{
+border: 1px solid orange;
+background-color: lightyellow;
+padding: 3px;
+margin-bottom: 0.5em;
+width: 350px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+/***********************************************
+* Local Time script- © Dynamic Drive (http://www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+
+var weekdaystxt=["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
+
+function showLocalTime(container, servermode, offsetMinutes, displayversion){
+if (!document.getElementById || !document.getElementById(container)) return
+this.container=document.getElementById(container)
+this.displayversion=displayversion
+var servertimestring=(servermode=="server-php")? '<? print date("F d, Y H:i:s", time())?>' : (servermode=="server-ssi")? 'February 27, 2008 20:08:31' : '<%= Now() %>'
+this.localtime=this.serverdate=new Date(servertimestring)
+this.localtime.setTime(this.serverdate.getTime()+offsetMinutes*60*1000) //add user offset to server time
+this.updateTime()
+this.updateContainer()
+}
+
+showLocalTime.prototype.updateTime=function(){
+var thisobj=this
+this.localtime.setSeconds(this.localtime.getSeconds()+1)
+setTimeout(function(){thisobj.updateTime()}, 1000) //update time every second
+}
+
+showLocalTime.prototype.updateContainer=function(){
+var thisobj=this
+if (this.displayversion=="long")
+this.container.innerHTML=this.localtime.toLocaleString()
+else{
+var hour=this.localtime.getHours()
+var minutes=this.localtime.getMinutes()
+var seconds=this.localtime.getSeconds()
+var ampm=(hour>=12)? "PM" : "AM"
+var dayofweek=weekdaystxt[this.localtime.getDay()]
+this.container.innerHTML=formatField(hour, 1)+":"+formatField(minutes)+":"+formatField(seconds)+" "+ampm+" ("+dayofweek+")"
+}
+setTimeout(function(){thisobj.updateContainer()}, 1000) //update container every second
+}
+
+function formatField(num, isHour){
+if (typeof isHour!="undefined"){ //if this is the hour field
+var hour=(num>12)? num-12 : num
+return (hour==0)? 12 : hour
+}
+return (num<=9)? "0"+num : num//if this is minute or sec field
+}
+
+</script>
+
+<style type="text/css">#c6 a{ color: black; background: #F0F0F0}</style></head><body>
+
+<div id="toprightdiv">
+
+<div id="toprightdivbox">
+<form method="get" action="http://search.freefind.com/find.html" id="topform">
+<input name="id" size="0" value="6299074" type="hidden">
+<input name="pageid" size="0" value="r" type="hidden">
+<input name="mode" size="0" value="ALL" type="hidden">
+<input name="n" value="0" type="hidden">
+<input name="query" maxlength="255" id="topsearchbox" alt="Search"> 
+<input value="Search" class="topformbutton" type="submit">
+</form>
+
+<div style="margin-top: 3px;"><a href="http://www.dynamicdrive.com/submitscript.htm">Submit</a> <a href="http://www.dynamicdrive.com/faqs.htm">FAQs</a> <a href="http://www.dynamicdrive.com/award/">Awards</a> <a href="http://www.dynamicdrive.com/notice.htm">Usage Terms</a> <a href="http://www.dynamicdrive.com/contact.htm">Contact</a></div>
+
+</div>
+
+</div>
+
+<a href="http://www.dynamicdrive.com/" title="Dynamic Drive- Award winning DHTML and JavaScript"><img src="localtime_files/logo.gif" border="0"></a>
+
+	<div id="ddtoptabs">
+		<ul>
+			<li style="margin-left: 1px;"><a href="http://www.dynamicdrive.com/" title="Home"><span>Home</span></a></li>
+			<li><a href="http://www.dynamicdrive.com/new.htm" title="New"><span>New</span></a></li>
+			<li><a href="http://www.dynamicdrive.com/revised.htm" title="Revised"><span>Revised</span></a></li>
+			<li><a href="http://tools.dynamicdrive.com/" title="Tools"><span>Tools</span></a></li>	
+			<li><a href="http://www.dynamicdrive.com/forums/" title="DHTML Forums"><span>Forums</span></a></li>
+			<li id="csslibrarytab"><a href="http://www.dynamicdrive.com/style/" title="CSS Library"><span>CSS Library</span></a></li>	
+		</ul>
+	</div>
+
+
+	<div id="ddtoptabsline"><img src="localtime_files/spacer.gif"></div>
+
+<center><script type="text/javascript" src="localtime_files/adbanner.js"></script></center>
+
+<p id="pathlinks"><a href="http://www.dynamicdrive.com/">Home</a> <img src="localtime_files/arrow2.gif" border="0" height="10" width="8">                                                        
+<a href="http://www.dynamicdrive.com/dynamicindex6/">Date and Time</a> <img src="localtime_files/arrow2.gif" border="0" height="10" width="8">                                                        Here</p>
+
+<table id="maintable" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td id="leftbar" valign="top">
+			<div class="headers">Categories</div>
+			<ul class="categorylinks">
+				<li id="c7"><a href="http://www.dynamicdrive.com/dynamicindex7/">Calendars</a></li>
+				<li id="c6"><a href="http://www.dynamicdrive.com/dynamicindex6/">Date &amp; Time</a></li>
+				<li id="c3"><a href="http://www.dynamicdrive.com/dynamicindex3/">Document Effects</a></li>
+				<li id="c17"><a href="http://www.dynamicdrive.com/dynamicindex17/">Dynamic Content</a></li>
+				<li id="c16"><a href="http://www.dynamicdrive.com/dynamicindex16/">Form Effects</a></li>
+				<li id="c12"><a href="http://www.dynamicdrive.com/dynamicindex12/">Games</a></li>
+				<li id="c4"><a href="http://www.dynamicdrive.com/dynamicindex4/">Image Effects</a></li>		
+				<li id="c5"><a href="http://www.dynamicdrive.com/dynamicindex5/">Links &amp; Tooltips</a></li>			
+				<li id="c1"><a href="http://www.dynamicdrive.com/dynamicindex1/">Menus &amp; Navigation</a></li>
+				<li id="c13"><a href="http://www.dynamicdrive.com/dynamicindex13/">Mouse and Cursor</a></li>			
+				<li id="c2"><a href="http://www.dynamicdrive.com/dynamicindex2/">Scrollers</a></li>
+				<li id="c10"><a href="http://www.dynamicdrive.com/dynamicindex10/">Text Animations</a></li>
+				<li id="c9"><a href="http://www.dynamicdrive.com/dynamicindex9/">User/System Preference</a></li>
+				<li id="c8"><a href="http://www.dynamicdrive.com/dynamicindex8/">Window and Frames</a></li>
+				<li id="c11"><a href="http://www.dynamicdrive.com/dynamicindex11/">Other</a></li>
+				<li id="c18"><a href="http://www.dynamicdrive.com/dynamicindex18/">XML and RSS</a></li>
+			</ul>
+
+
+			<div class="headers">Other Sections</div>
+			<ul class="categorylinks diffpointer">
+				<li><a href="http://www.dynamicdrive.com/forums/">Script Forums</a></li>
+				<li><a href="http://www.dynamicdrive.com/recommendit/">Recommend Us</a></li>
+				<li><a href="http://www.dynamicdrive.com/notice.htm">Usage Terms</a></li>
+				<li><a href="http://www.javascriptkit.com/">Free JavaScripts</a></li>		
+			</ul>
+
+
+			<div class="headers">Partners</div>
+			<div style="margin: 8px 0pt 0pt 2px;">
+			<div><a href="http://www.daniweb.com/forums/forum31.html" target="_partner" style="color: rgb(68, 152, 5); font-weight: bold;">DaniWeb Web Dev Community</a></div>
+			<div>DaniWeb is an exciting community for web developers, Internet marketers, and technology enthusiasts.</div>
+			<div style="margin: 10px 0pt; text-align: center;"><a href="http://www.daniweb.com/forums/forum31.html" target="_partner"><img src="localtime_files/daniweb.gif" style="border: 0pt none ; width: 125px; height: 24px;" title="Daniweb"></a></div>
+			</div>
+	
+		
+    <div class="headers">Compatibility</div>
+<ul class="menuitems">
+<li style="border-bottom: 1px solid rgb(236, 236, 236);"><b>IE5+:</b> IE 5 and above</li>
+<li style="border-bottom: 1px solid rgb(236, 236, 236);"><b>FF1+:</b> Firefox 1.0+. NS6+ and FF beta are 
+  assumed as well.</li>
+<li style="border-bottom: 1px solid rgb(236, 236, 236);"><b>Opr7+:</b> Opera 7 and above.</li>
+
+</ul>
+
+<div>
+
+Bookmark <b style="color: navy;"><script type="text/javascript">document.write(ddscripttitle)</script>Local Time script</b> online:<br>
+<ul style="margin-top: 5px; font-size: 90%; margin-left: 0pt; padding-left: 18px;"><li><a href="http://www.dynamicdrive.com/bookmark.php?site=deli" onclick="return jsenabledmark('deli')" rel="nofollow">Bookmark</a> to del.icio.us</li>
+<li><a href="http://www.dynamicdrive.com/bookmark.php?site=furl" onclick="return jsenabledmark('furl')" rel="nofollow">Bookmark</a> to Furl.net</li>
+</ul>
+
+</div>
+
+
+<p align="center">
+<a href="http://www.dynamicdrive.com/link.htm">
+<img src="localtime_files/dhtml-scripts.png" border="0" height="15" width="80"></a><br>
+<a href="http://www.dynamicdrive.com/link.htm" style="font-size: 80%;">Link Back</a></p>
+
+
+
+    </td>
+    <td id="spacertd">
+<img src="localtime_files/spacer.gif" id="spacergif">
+    </td>
+    <td id="contentarea" valign="top">
+    
+<script type="text/javascript">
+if (showincontentheader)
+document.write('<div id="topbanner" align="left">'+revised_ranban[ran_num]+'</div>')
+</script><div id="topbanner" align="left"></div>
+
+<div id="scriptheader"><span class="compatlist">FF1+ IE5+ Opr7+</span> 
+  <h3>Local Time script</h3></div> 
+<div id="scriptheaderFoot"><span class="rightit"></span> <b>Author: Dynamic 
+  Drive</b></div>
+
+      <p align="left"><b>Note:</b> Updated Dec 6th, 05 to support ASP pages.</p>
+<p align="left"><strong>Description: </strong>Want to display the current 
+      local time of a specific place in the world? This DHTML script, with the 
+      help of either PHP, ASP, or SSI (server side includes), displays the current 
+      server time your site is hosted on, and in turn, the local time of 
+      anywhere on Earth. You can use it to show visitors your current local 
+      time, or the time in New York, Tokyo etc. Now, in order to use this 
+      script, the webpage you're adding it to must be either PHP (ie: .php), 
+      ASP, or 
+      SSI (ie: .shtml) enabled. More on this below.</p>
+<p align="left">As mentioned, this local time script uses the time of the server 
+hosting your site as its reference point. To display the local time of Paris 
+then, simply enter into the script the time differential between Paris and your 
+server time (ie: +120 minutes), and Paris' Time is derived and shown. By using 
+the server time instead of each visitor's computer clock as the reference point, 
+this script is more reliable, since you only have to account for a single time 
+being accurate in order for the script to be, and that is your server's time. 
+Contrast that with a local time script that uses each visitor's PC clock for its 
+calculations- if the visitor's time is incorrect, he/she will also get an 
+incorrect local (ie: Paris) time.</p>
+<p align="left">Finally, this script can be called multiple times on the same 
+page to display simultaneously the local times of different places. Cool!</p>
+    <p align="left"><strong>Demo:</strong></p>
+<p align="left"><!--webbot bot="HTMLMarkup" startspan --></p><div class="bigbox"><b>Server Time:</b> <span id="timebox">11:07:39 PM (Wed)</span></div>
+<div class="bigbox"><b>Paris:</b> <span id="timebox2">9:07:39 AM (Thurs)</span></div>
+<div class="bigbox"><b>New York:</b> <span id="timebox3">3:07:39 AM (Thurs)</span></div>
+<div class="bigbox"><b>Tokyo:</b> <span id="timebox4">5:07:39 PM (Thurs)</span></div>
+
+<script type="text/javascript">
+new showLocalTime("timebox", "server-ssi", 0, "short")
+new showLocalTime("timebox2", "server-ssi", 600, "short")
+new showLocalTime("timebox3", "server-ssi", 240, "short")
+new showLocalTime("timebox4", "server-ssi", 1080, "short")
+</script>
+<!--webbot bot="HTMLMarkup" endspan i-checksum="21186" -->
+    <hr size="1">
+    <p align="left"><strong>Directions: </strong>
+    <a target="win2" href="http://www.dynamicdrive.com/dynamicindex6/localtime_dev.htm"><img src="localtime_files/dview.gif" alt="Developer's View" border="0" height="19" width="115"></a></p>
+      <p align="left"><strong>Step 1:</strong>  Insert the below script into the 
+      HEAD section of your page:</p>
+      <form>
+        <p>
+<a class="selectall" href="javascript:highlight(0)">Select All</a>
+        <br>
+        <textarea class="codecontainer" rows="8" name="S1" cols="45" wrap="virtual">&lt;script
+type="text/javascript"&gt;
+/***********************************************
+* Local Time script- © Dynamic Drive (http://www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+var weekdaystxt=["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
+function showLocalTime(container, servermode, offsetMinutes,
+displayversion){
+if (!document.getElementById || !document.getElementById(container))
+return
+this.container=document.getElementById(container)
+this.displayversion=displayversion
+var servertimestring=(servermode=="server-php")? '&lt;? print date("F
+d, Y H:i:s", time())?&gt;' : (servermode=="server-ssi")?
+'&lt;!--#config timefmt="%B %d, %Y %H:%M:%S"--&gt;&lt;!--#echo
+var="DATE_LOCAL" --&gt;' : '&lt;%= Now() %&gt;'
+this.localtime=this.serverdate=new Date(servertimestring)
+this.localtime.setTime(this.serverdate.getTime()+offsetMinutes*60*1000)
+//add user offset to server time
+this.updateTime()
+this.updateContainer()
+}
+showLocalTime.prototype.updateTime=function(){
+var thisobj=this
+this.localtime.setSeconds(this.localtime.getSeconds()+1)
+setTimeout(function(){thisobj.updateTime()}, 1000) //update time every
+second
+}
+showLocalTime.prototype.updateContainer=function(){
+var thisobj=this
+if (this.displayversion=="long")
+this.container.innerHTML=this.localtime.toLocaleString()
+else{
+var hour=this.localtime.getHours()
+var minutes=this.localtime.getMinutes()
+var seconds=this.localtime.getSeconds()
+var ampm=(hour&gt;=12)? "PM" : "AM"
+var dayofweek=weekdaystxt[this.localtime.getDay()]
+this.container.innerHTML=formatField(hour,
+1)+":"+formatField(minutes)+":"+formatField(seconds)+" "+ampm+"
+("+dayofweek+")"
+}
+setTimeout(function(){thisobj.updateContainer()}, 1000) //update
+container every second
+}
+function formatField(num, isHour){
+if (typeof isHour!="undefined"){ //if this is the hour field
+var hour=(num&gt;12)? num-12 : num
+return (hour==0)? 12 : hour
+}
+return (num&lt;=9)? "0"+num : num//if this is minute or sec field
+}
+&lt;/script&gt;</textarea></p>
+      </form>
+      <p align="left"><strong>Step 2:</strong> 
+      Inside your &lt;BODY&gt;, define a DIV or SPAN tag with a unique ID that will 
+      contain the local time, then invoke "showLocalTime()" to populate it:</p>
+      <div align="left">
+        <pre>Current Server Time:&lt;span id="timecontainer"&gt;&lt;/span&gt;
+
+&lt;script type="text/javascript"&gt;
+new showLocalTime("timecontainer", "server-ssi", 0, "short")
+&lt;/script&gt;</pre>
+</div>
+      <p align="left">Here's an explanation of the 4 parameters of 
+      showLocalTime():</p>
+<ol>
+  <li>
+  <b>ContainerID</b> (string): The ID of the DIV or span that 
+  will house the local time.</li>
+  <li>
+  <b>Servermode</b> (string): Valid values are either 
+  "server-php", "server-asp", or "server-ssi", to indicate this page as either 
+  of type, PHP, ASP, or SSI.</li>
+  <li>
+  <b>LocaltimeoffsetMinutes</b> (integer): The offset in <font color="#ff0000">minutes</font> 
+  of the local time you wish to display, from the server time. For example, if 
+  your server time is currently 9:30 AM and you know the desired local time is 
+  11:30AM, the offset is 120, or 2 hours then.</li>
+  <li>
+  <b>Display Format</b> (string): valid values are either 
+  "short" or "long". The latter will cause the local date to be displayed along 
+  with the time.</li>
+</ol>
+<p align="left">For the "<b>servermode</b>" parameter, it must be set to either 
+"server-php", "server-asp", or "server-ssi", depending on whether your 
+page is php, asp, or ssi 
+enabled, respectively. This script will NOT work on 100% static pages, such as plain .html.</p>
+<p align="left">That's it. Read on for additional helpful information.</p>
+<div style="font-size: 110%; font-weight: bold; text-decoration: underline; color: gray;" align="left">How to calculate the "LocaltimeoffsetMinutes" value for the desired world 
+location</div>
+<p align="left">For the <b>"LocaltimeoffsetMinutes"</b> parameter of 
+showLocalTime(), set it to the 
+offset in minutes between the desired local time and the server time. You can 
+calculate this offset easily, by doing this:</p>
+<p align="left">1) Display the server time on your page first, by setting <b>
+"LocaltimeoffsetMinutes"</b> to 0:</p>
+<div align="left">
+  <pre>&lt;script type="text/javascript"&gt;
+new showLocalTime("timecontainer", "server-ssi", 0, "short")
+&lt;/script&gt;</pre>
+</div>
+<p align="left">Lets say the time you see on your page is <b>3:20:45 PM.</b> 
+This is your server's current time.</p>
+<p align="left">2) Look up the current time of the location you wish to display, 
+such as New York. Lets say it turns out to be 5:20:54 PM. You now know that <b>
+"LocaltimeoffsetMinutes" </b>should be <b>120</b>, or 2 hours separating the two 
+dates. As another example, lets say the desired local time you wish to display 
+is LA, with the current LA time being 2:20:54 PM. The <b>"LocaltimeoffsetMinutes"</b> 
+in this case should be <b>-60</b> then, or 1 hour separating the two dates, but 
+in the opposite direction (server time is greater than LA time).</p>
+<p align="left">3) With <b>"LocaltimeoffsetMinutes"</b> determined, you can now 
+go ahead and display the desired local time. For example:</p>
+      <div align="left">
+        <pre>Current LA Time:&lt;span id="timecontainer"&gt;&lt;/span&gt;
+
+&lt;script type="text/javascript"&gt;
+new showLocalTime("timecontainer", "server-ssi", -60, "short")
+&lt;/script&gt;</pre>
+</div>
+      <p align="left">That wasn't too difficult was it?</p>
+<h4 align="left"><u>More Information</u></h4>
+<p align="left">Before you run off, just a couple more points that are 
+mention worthy:</p>
+<p align="left">1) Displaying multiple dates- The object oriented design of this 
+script means you can invoke it multiple times to display multiple local times on 
+the same page! Here's an example:</p>
+      <div align="left">
+        <pre>Current Server Time:&lt;span id="timecontainer"&gt;&lt;/span&gt;&lt;br /&gt;
+Current LA Time:&lt;span id="timecontainer2"&gt;&lt;/span&gt;&lt;br /&gt;
+Current New York Time:&lt;span id="timecontainer3"&gt;&lt;/span&gt;&lt;br /&gt;
+
+&lt;script type="text/javascript"&gt;
+new showLocalTime("timecontainer", "server-asp", 0, "short")
+new showLocalTime("timecontainer2", "server-asp", -60, "short")
+new showLocalTime("timecontainer3", "server-asp", 120, "short")
+&lt;/script&gt;</pre>
+</div>
+      <p align="left">1) Watch out for daylight savings time- Depending on where 
+      your server is located and/or the local time you wish to display, you may 
+      need to adjust <b>"LocaltimeoffsetMinutes" </b>twice yearly to account for 
+      Day Light Savings time. If the script is suddenly displaying an incorrect 
+      local time, you know that you probably need to re-perform the two steps 
+      required to get <b>"LocaltimeoffsetMinutes" </b>again.</p>
+    <script type="text/javascript"><!--
+google_ad_client = "pub-3356683755662088";
+google_alternate_color = "FFFFCC";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel = "";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000CC";
+google_color_text = "000033";
+google_color_url = "999999";
+//-->
+</script>
+<script type="text/javascript" src="localtime_files/show_ads.js">
+</script><iframe name="google_ads_frame" src="localtime_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="60" scrolling="no" width="468"></iframe></td>
+  </tr>
+</tbody></table>
+
+
+<p id="footer">Copyright © 1998-2008 <a href="http://www.dynamicdrive.com/">
+Dynamic Drive.</a> Please read <a href="http://dynamicdrive.com/notice.htm">Terms Of Use here</a> before using any of the scripts.</p>
+
+
+</body></html>

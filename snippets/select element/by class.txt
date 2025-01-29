@@ -1,0 +1,7 @@
+
+https://www.w3schools.com/jsref/met_document_getelementsbyclassname.asp
+
+
+var x = document.getElementsByClassName("example");
+
+

@@ -1,0 +1,10 @@
+
+
+
+https://stackoverflow.com/questions/59331586/fastest-algorithm-to-remove-duplicate-consecutive-words-in-a-string
+
+
+const string = 'John bought bought black paint for his black black car';
+const replaced = string.replace(/(\b\w+)(?: \1\b)+/g, '$1');
+console.log(replaced);
+

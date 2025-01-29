@@ -1,0 +1,7 @@
+document.getElementById('dinef').style.display = "block";
+document.getElementById('deli_form').style.display = "none";
+
+
+else
+
+document.getElementById('deli_form').style.display = "unset";

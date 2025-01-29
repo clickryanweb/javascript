@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+
+
+<!-- Begin
+function textCounter(field, countfield, maxlimit) {
+if (field.value.length > maxlimit) // if too long...trim it!
+field.value = field.value.substring(0, maxlimit);
+// otherwise, update 'characters left' counter
+else
+countfield.value = maxlimit - field.value.length;
+}
+// End -->
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+
+  <textarea cols="50" rows="9" name="personalization" wrap="hard" onKeyDown="textCounter(this.form.personalization,this.form.remLenpersonalization,20);" onKeyUp="textCounter(this.form.personalization,this.form.remLenpersonalization,20);"></textarea>
+<input type="text" name="remLenpersonalization" value="20" size="3" maxlength="3" readonly="readonly">
+
+</form>
+</body>
+</html>

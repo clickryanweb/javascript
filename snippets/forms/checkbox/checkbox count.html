@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<script type="text/javascript">
+function makeCheck(thisForm)
+{
+for (i = 0; i < thisForm.option.length; i++)
+	{
+	thisForm.option[i].checked=true
+	}
+}
+
+function makeUncheck(thisForm)
+{
+for (i = 0; i < thisForm.option.length; i++)
+	{
+	thisForm.option[i].checked=false
+	}
+}
+
+
+
+
+function qwe(thisctrl)
+{
+
+myctrl="myForm."+thisctrl;
+
+
+for (i = 0; i < eval(myctrl+".length"); i++)
+{
+
+//myvals=myctrl+[i]+".checked";
+//	thisForm.option[i].checked=false
+
+if(eval(myctrl+"[" + i + "].checked") == true) {
+//alert(eval(myctrl+"[" + i + "].value"));
+
+myForm.textfield.value=eval(myctrl+"[" + i + "].value");
+}
+}
+}
+
+
+function qwe2(thisctrl, thisval)
+{
+
+myctrl="myForm."+thisctrl;
+
+if(eval(myctrl + ".checked") == true) {
+//alert(eval(myctrl+"[" + i + "].value"));
+
+myForm.textfield.value=parseInt(myForm.textfield.value)+parseInt(eval(myctrl+".value"));
+}
+else{
+myForm.textfield.value=parseInt(myForm.textfield.value)-parseInt(eval(myctrl+".value"));
+}
+
+}
+
+</script>
+</head>
+<body>
+
+<form name="myForm">
+<input type="button" value="Check" onclick="makeCheck(this.form)">
+<input type="button" value="Uncheck" onclick="makeUncheck(this.form)">
+<input type="button" value="number of checks" />
+<br />
+<input type="checkbox" name="option11" value="11" onclick="qwe2(this.name, this.value)">Apples<br />
+<input type="checkbox" name="option12" value="12" onclick="qwe2(this.name, this.value)">Oranges<br />
+<input type="checkbox" name="option13" value="13" onclick="qwe2(this.name, this.value)">Bananas<br />
+<input type="checkbox" name="option14" value="14" onclick="qwe2(this.name, this.value)">Melons<br />
+<input name="textfield" type="text" id="textfield" value="0" />
+<br />
+
+<input type="checkbox" name="option2" value="1">Apples2<br />
+<input type="checkbox" name="option2" value="2">Oranges2<br />
+<input type="checkbox" name="option2" value="3">Bananas2<br />
+<input type="checkbox" name="option2" value="4">Melons2
+
+</form>
+
+</body>
+</html>
+
+

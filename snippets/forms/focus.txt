@@ -1,0 +1,2 @@
+var mytext = document.getElementById("mytext2");
+mytext.focus(); 

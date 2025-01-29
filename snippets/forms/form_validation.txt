@@ -1,0 +1,121 @@
+<script language="javascript">
+function IsNumeric(strString)
+   {
+     var strValidChars = "0123456789.-";
+     var strChar;
+     var blnResult = true;
+       if (strString.length == 0) return false;
+       for (i = 0; i < strString.length && blnResult == true; i++)
+         {
+           strChar = strString.charAt(i);
+           if (strValidChars.indexOf(strChar) == -1)
+             {
+              blnResult = false;
+             }
+         }
+        return blnResult;
+   }
+
+
+function trim(value) {
+   var temp = value;
+   var obj = /^(\s*)([\W\w]*)(\b\s*$)/;
+   if (obj.test(temp)) { temp = temp.replace(obj, '$2'); }
+   var obj = / +/g;
+   temp = temp.replace(obj, " ");
+   if (temp == " ") { temp = ""; }
+   return temp;
+}
+
+//re = /^\w+([\.-]?\w+)*@+([\.]?\w+)*(\.\w{2,3})+$/
+re =/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+
+function checkform(x)
+{
+
+	if (trim(x.txt1.value) == "")
+	{
+	        alert("Your Full Name is required.");
+			x.txt1.focus()
+			x.txt1.select()
+            return false;
+	}
+	
+if (trim(x.txt2.value) == ""){
+	        alert("Company Name is required.");
+			x.txt2.focus()
+			x.txt2.select()
+            return false;
+	}
+	if (trim(x.txt3.value) == ""){
+	        alert("Designation field is required.");
+			x.txt3.focus()
+			x.txt3.select()
+            return false;
+	}
+	if (trim(x.txt4.value) == ""){
+	        alert("Address field is required.");
+			x.txt4.focus()
+			x.txt4.select()
+            return false;
+	}
+	
+		
+	if (trim(x.txt5.value) == ""){
+	        alert("Phone field required.");
+			x.txt5.focus()
+			x.txt5.select()
+            return false;
+	} 
+	if (IsNumeric(x.txt5.value) == false){
+	        alert("Phone field required.");
+			x.txt5.focus()
+			x.txt5.select()
+            return false;
+	} 
+
+<!----fax--->	
+	if (trim(x.txt6.value) == ""){
+	        alert("Fax field required.");
+			x.txt6.focus()
+			x.txt6.select()
+            return false;
+	} 
+	if (IsNumeric(x.txt6.value) == false){
+	        alert("Fax field required.");
+			x.txt6.focus()
+			x.txt6.select()
+            return false;
+	} 
+<!----mobile--->	
+	if (trim(x.txt7.value) == ""){
+	        alert("Mobile field required.");
+			x.txt7.focus()
+			x.txt7.select()
+            return false;
+	} 
+	if (IsNumeric(x.txt7.value) == false){
+	        alert("Mobile field required.");
+			x.txt7.focus()
+			x.txt7.select()
+            return false;
+	} 
+
+<!----email--->	
+	if (trim(x.txt8.value) == ""){
+	        alert("Email field required.");
+			x.txt8.focus()
+			x.txt8.select()
+            return false;
+	} 
+if (re.test(x.txt8.value) == false)
+		{
+		alert("Invalid E-mail Address");
+		x.txt8.focus()
+		x.txt8.select()
+        return false;	  
+		}	
+
+
+}
+</script>

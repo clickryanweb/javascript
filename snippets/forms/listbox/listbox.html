@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<body>
+
+<script language="javascript">
+    function AddItem()
+    {
+	//checkboxes...
+	if (document.forms[0].checkbox.checked){
+		chk1="Notify when narrations are added, "
+		matrx1="1"
+	}
+	else{ 
+		chk1=""
+		matrx1="0"
+	}
+	if (document.forms[0].checkbox2.checked){
+		chk2="Notify when status is changed, "
+		matrx2="1"
+	}
+	else{
+		chk2=""
+		matrx2="0"
+	}
+	if (document.forms[0].checkbox3.checked){
+		chk3="Notify when escalated, "
+		matrx3="1"
+	}
+	else{
+		chk3=""
+		matrx3="0"
+	}
+	if (document.forms[0].checkbox4.checked){
+		chk4="Notify when transferred, "
+		matrx4="1"
+	}
+	else{
+		chk4=""
+		matrx4="0"
+	}
+	if (document.forms[0].checkbox5.checked){
+		chk5="Notify when closed "
+		matrx5="1"
+	}
+	else{
+		chk5=""
+		matrx5="0"
+	}
+        // Create an Option object        
+        var opt = document.createElement("Option");
+
+        // Add an Option object to Drop Down/List Box
+        document.forms[0].select2.options.add(opt);
+
+        // Assign text and value to Option object
+        opt.text = document.forms[0].select.value + " (" + chk1 + chk2 + chk3 + chk4 + chk5 +" )";
+        opt.value =  document.forms[0].select.value +", " + matrx1 + matrx2 + matrx3 + matrx5 + matrx5  ;
+
+
+//clear checkboxes...
+document.forms[0].checkbox.checked=false;
+document.forms[0].checkbox2.checked=false;
+document.forms[0].checkbox3.checked=false;
+document.forms[0].checkbox4.checked=false;
+document.forms[0].checkbox5.checked=false;
+
+    }
+	
+
+
+function removeSelected(){
+
+//alert(document.forms[0].select2.selectedIndex)
+ document.forms[0].select2.options.remove(document.forms[0].select2.selectedIndex);
+
+}
+	
+	
+</script>
+
+
+<form id="form1" name="form1" method="post" action="">
+  <label>
+  <select name="select" id="select">
+    <option value="qwe">qwe...</option>
+    <option value="asd">asd...</option>
+    <option value="zxc">zxc...</option>
+    <option value="iop">iop...</option>
+    <option value="jkl">jkl...</option>
+    <option value="bnm">bnm...</option>
+  </select>
+  </label>
+  <label>
+  <select name="select2" size="5" id="select2">
+  </select>
+  </label>
+  <label>
+  <input type="button" name="button" id="button" value="Submit" onclick="AddItem()" />
+  </label>
+  <label>
+  <input type="button" name="button2" id="button2" value="Remove" onclick="removeSelected()"/>
+  </label>
+  <label></label>
+  <br />
+  <br />
+  <input type="checkbox" name="checkbox" id="checkbox" />
+Notify when narrations are added<br />
+  <input type="checkbox" name="checkbox2" id="checkbox2" />
+  Notify when status is changed<br />
+  <input type="checkbox" name="checkbox3" id="checkbox3" />
+  Notify when escalated<br />
+  <input type="checkbox" name="checkbox4" id="checkbox4" />
+  Notify when transferred<br />
+  <input type="checkbox" name="checkbox5" id="checkbox5" />
+  Notify when closed<br />
+</form>
+</body>
+</html>

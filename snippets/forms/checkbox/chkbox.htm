@@ -1,0 +1,37 @@
+
+<html>
+
+<script language=javascript>
+
+
+function a(box){
+    if (box.checked){
+    //alert(box.value); 
+        document.qwe1.Text1.value = document.qwe1.Text1.value + ',' + box.value;
+    }
+
+    //trigger if theres uncheckbox...
+    if (box.checked == false) {
+        //alert("...");
+        for (i = 0; i < thisForm.option.length; i++) {
+            thisForm.option[i].checked = true;
+        }
+    }
+
+}
+
+
+</script>
+
+<body><form name="qwe1">
+
+<input type ="checkbox" id = "checkbox1" value="1" onclick = "a(this)"/><br />
+<input type ="checkbox" id = "checkbox2" value="2" onclick = "a(this)"/><br />
+<input type ="checkbox" id = "checkbox3" value="3" onclick = "a(this)"/><br />
+<input type ="checkbox" id = "checkbox4" value="4" onclick = "a(this)"/><br />
+<input type ="checkbox" id = "checkbox5" value="5" onclick = "a(this)"/>
+    <br />
+    <input id="Text1" type="text" /></form></body></html>
+
+ 
+ 

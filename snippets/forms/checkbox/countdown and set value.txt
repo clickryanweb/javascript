@@ -1,0 +1,16 @@
+
+<select id="test"></select>
+
+
+
+var select, i, option;
+
+select = document.getElementById( 'test' );
+
+for ( i = 12; i>=0; i-- ) {
+    option = document.createElement( 'option' );
+    option.value = option.text = i;
+    select.add( option );
+    //alert(i);
+
+}

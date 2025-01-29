@@ -1,0 +1,5 @@
+
+
+<script>document.getElementById('NewRecord1TextBox1').value='...'</script>
+
+

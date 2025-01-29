@@ -1,0 +1,4 @@
+sel = document.form1.mySelect.options[document.form1.mySelect.selectedIndex]
+	alert(sel.value)
+	alert(sel.text)
+	return false;

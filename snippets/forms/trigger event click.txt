@@ -1,0 +1,12 @@
+
+
+https://stackoverflow.com/questions/6367339/trigger-a-button-click-from-a-non-button-element
+
+
+el = document.getElementById('id');
+if (el.onclick) {
+   el.onclick();
+} else if (el.click) {
+   el.click();
+}
+

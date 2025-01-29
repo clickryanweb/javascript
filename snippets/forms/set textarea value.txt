@@ -1,0 +1,11 @@
+
+
+
+
+https://newbedev.com/vanilla-javascript-set-textarea-value-code-example
+
+
+document.getElementById("ibm_usermetaTextArea1").textContent = '';
+
+
+

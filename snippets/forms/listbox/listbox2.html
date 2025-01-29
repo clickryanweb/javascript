@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<body>
+
+<script language="javascript">
+    function AddItem()
+    {
+        // Create an Option object        
+
+        var opt = document.createElement("Option");
+
+        // Add an Option object to Drop Down/List Box
+        document.getElementById("select2").options.add(opt);
+
+        // Assign text and value to Option object
+        opt.text = document.getElementById("select").value;
+        opt.value = document.getElementById("select").value;
+
+    }
+	
+function GetSelectedItem(qwe) {
+
+
+document.forms[0].textfield.value=qwe
+//alert (qwe);
+
+
+} 
+
+function removeSelected(){
+
+//alert(document.forms[0].select2.selectedIndex)
+   //  var opt = document.createElement("Option");
+ document.getElementById('select2').options.remove(document.forms[0].select2.selectedIndex);
+  //opt.value = document.getElementById("select2").selectedIndex;
+
+}
+	
+	
+</script>
+
+
+<form id="form1" name="form1" method="post" action="">
+  <label>
+  <select name="select" id="select">
+    <option value="qwe">qwe</option>
+    <option value="asd">asd</option>
+    <option value="zxc">zxc</option>
+    <option value="iop">iop</option>
+    <option value="jkl">jkl</option>
+    <option value="bnm">bnm</option>
+  </select>
+  </label>
+  <label>
+  <select name="select2" size="5" id="select2" onchange="GetSelectedItem(this.value)">
+  </select>
+  </label>
+  <label>
+  <input type="button" name="button" id="button" value="Submit" onclick="AddItem()" />
+  </label>
+  <label>
+  <input type="button" name="button2" id="button2" value="Remove" onclick="removeSelected()"/>
+  </label>
+  <label>
+  <input type="text" name="textfield" id="textfield" />
+  </label>
+</form>
+</body>
+</html>

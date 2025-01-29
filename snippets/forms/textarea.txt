@@ -1,0 +1,48 @@
+
+
+https://www.geeksforgeeks.org/html-dom-textarea-rows-property/
+
+
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>DOM Textarea rows Property</title> 
+    <style> 
+        h1, 
+        h2 { 
+            text-align: center; 
+        } 
+    </style> 
+</head> 
+  
+<body style="text-align:center;"> 
+    <h1 style="color: green;">  
+            GeeksforGeeks  
+        </h1> 
+  
+    <h2>  
+            DOM Textarea rows Property  
+        </h2> 
+  
+    <!-- Below id assigned to Textarea Element -->
+    <textarea id="GFG" rows="5" cols="23"> 
+        This paragraph has number of rows equal to 5. 
+    </textarea> 
+    <br> 
+    <button type="button" onclick="myGeeks()">Submit</button> 
+    <p id="sudo"></p> 
+    <script> 
+        function myGeeks() { 
+            
+            // Return number of rows in the textare. 
+            var x = document.getElementById("GFG").rows; 
+            document.getElementById("sudo").innerHTML =  
+              "There are" + x + " rows in a Textarea height."; 
+        } 
+    </script> 
+</body> 
+  
+</html> 
+
+

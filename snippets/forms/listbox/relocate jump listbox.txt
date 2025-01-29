@@ -1,0 +1,36 @@
+
+
+function relocate(select)
+{
+var addQuery = select.options[select.selectedIndex].value;
+if(!addQuery) return; /* no selection */
+//we need only yes
+
+
+
+//assign value
+if (addQuery==1){
+
+        document.forms['ctl00'].elements['airconRepeater_ctl01_airconans_hid'].value =1;
+}
+
+
+//set property
+if(addQuery==3){
+        document.getElementById("Panel1aircontxtstartupdate").readOnly=false;
+                document.getElementById("Panel1aircontxtchecklistreceiveddate").readOnly=false;
+                document.getElementById("Panel1aircontxtChecklistDateCCG").readOnly=false;
+
+}
+
+}
+
+
+
+
+
+
+
+<select onchange='relocate(this)'><option value=''>Choose..<option value='3'>Yes<option value='0'>No</select>
+
+

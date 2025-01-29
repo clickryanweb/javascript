@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript">
+function preferedBrowser()
+{
+prefer=document.forms[0].browsers.value
+//alert("You prefer browsing internet with " + prefer)
+if (prefer=='Netscape'){
+document.form1.txtok.value="";
+document.form1.txtok.disabled=true;
+}
+else{
+
+	document.form1.txtok.disabled=false;
+}
+}
+</script>
+</head>
+
+<body>
+
+<form name=form1>
+Choose which browser you prefer:
+<select id="browsers" onchange="preferedBrowser()">
+<option value="Internet Explorer">Internet Explorer
+<option value="Netscape">Netscape
+</select>
+  <br>
+  <br>
+  <input name="txtok" type="text" id="txtok" >
+</form>
+
+</body>
+</html>
+

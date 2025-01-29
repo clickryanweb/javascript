@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function setResult()
+{
+document.getElementById("email").readOnly=true;
+}
+</script>
+</head>
+<body>
+
+<form>
+Email: <input type="text" id="email">
+</form>
+
+<button type="button" onclick="setResult()">Set read-only</button>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+function mysoln(){
+
+document.forms[0].ticketListBox3.value=document.forms[0].ticketComplaint.value;
+
+}
+
+function mycity(){
+
+var fieldName = document.getElementById("Grid1Repeater_ctl01_Grid1TextBox1").value;
+//var fieldName = qwe;
+           window.open('../pops/pop_CAMSrelated.aspx?fName=' + fieldName, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes,location=no,status=yes,toolbar=no,menubar=no');
+                   
+        
+}
+
+
+//----------------
+
+document.forms['ctl00'].elements['NewRecord1TextBox2'].value =

@@ -1,0 +1,113 @@
+<html>
+<body>
+<script language="JavaScript">
+function rep1(){
+document.form1.txtrep.value=""
+if (document.form1.r1.checked==true){
+document.form1.txtrep.value=document.form1.r1.value;
+}
+if (document.form1.r2.checked==true){
+document.form1.txtrep.value=document.form1.txtrep.value+","+document.form1.r2.value;
+}
+if (document.form1.r3.checked==true){
+document.form1.txtrep.value=document.form1.txtrep.value+","+document.form1.r3.value;
+}
+if (document.form1.r4.checked==true){
+document.form1.txtrep.value=document.form1.txtrep.value+","+document.form1.r4.value;
+}
+if (document.form1.r5.checked==true){
+document.form1.txtrep.value=document.form1.txtrep.value+","+document.form1.r5.value;
+}
+if (document.form1.r6.checked==true){
+document.form1.txtrep.value=document.form1.txtrep.value+","+document.form1.r6.value;
+}
+if (document.form1.r7.checked==true){
+document.form1.txtrep.value=document.form1.txtrep.value+","+document.form1.r7.value;
+}
+if (document.form1.r8.checked==true){
+document.form1.txtrep.value=document.form1.txtrep.value+","+document.form1.txtother1.value;
+}
+}
+
+</script><form name="form1">
+  <TABLE cellSpacing=0 cellPadding=0 width=547 bgColor=#ffffff border=0>
+    <!--DWLayoutTable-->
+    <TBODY>
+      <TR> 
+        <TD width="116" height=38 vAlign=top><STRONG>Im represent a/ an :</STRONG></TD>
+        <TD width="181"></TD>
+        <td width="23"></td>
+        <td width="214"></td>
+        <td width="13"></td>
+      </TR>
+      <TR> 
+        <TD vAlign=top height=28><INPUT name=r1 type=checkbox id="r1" value=Importer>
+          Importer</TD>
+        <TD vAlign=top><INPUT name=r5 type=checkbox id="r5" value=retailer>
+          Retailer</TD>
+        <td>&nbsp;</td>
+        <td rowspan="6" valign="top"><textarea name="txtrep" rows="5" id="txtrep"></textarea></td>
+        <td>&nbsp;</td>
+      </TR>
+      <TR> 
+        <TD vAlign=top height=30><INPUT name=r2 type=checkbox id="r2" value=Wholesaler>
+          Wholesaler</TD>
+        <TD vAlign=top><INPUT name=r6 type=checkbox id="r6" value=trader>
+          Trader</TD>
+        <td></td>
+        <td></td>
+      </TR>
+      <TR> 
+        <TD vAlign=top height=38><INPUT name=r3 type=checkbox id="r3" value="Dept store Store">
+          Department Store</TD>
+        <TD vAlign=top><INPUT name=r7 type=checkbox id="r7" value="mail order house house">
+          Mail Order House</TD>
+        <td></td>
+        <td></td>
+      </TR>
+      <TR> 
+        <TD vAlign=top height=38><input name="r4" type="checkbox" id="r4" value="buying office">
+          Buying Office</TD>
+        <TD vAlign=top><INPUT name=r8 type=checkbox id="r8" value=r8>
+          Others, please &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specify: </TD>
+        <td></td>
+        <td></td>
+      </TR>
+      <TR> 
+        <TD height=30>&nbsp;</TD>
+        <TD vAlign=center align=middle><INPUT name="txtother1"></TD>
+        <td></td>
+        <td></td>
+      </TR>
+      <tr> 
+        <td height="35"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td height="17"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr> 
+        <td height="38"></td>
+        <td></td>
+        <td></td>
+        <td valign="top"><input type="button" name="Button" value="Ok" onclick="rep1()"></td>
+        <td></td>
+      </tr>
+      <tr> 
+        <td height="27"></td>
+        <td></td>
+        <td></td>
+        <td>&nbsp;</td>
+        <td></td>
+      </tr>
+    </TBODY>
+  </TABLE>
+</form>
+</body>
+</html>

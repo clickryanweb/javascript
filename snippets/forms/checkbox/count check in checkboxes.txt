@@ -1,0 +1,23 @@
+//function to check total number of CheckBoxes 
+//that are checked in a form
+function countChecks(form) 
+{
+    //initialize total count to zero
+    var totalChecked = 0;
+    //get total number of CheckBoxes in form
+    var chkBoxCount = form.numberOfBlanks.length;
+
+    //loop through each CheckBox
+    for (var i = 0; i < chkBoxCount; i++) 
+    {
+        //check the state of each CheckBox
+        //replace "YourFormName" with the name of your form
+        if (eval("document.YourFormName.numberOfBlanks[" + i + "].checked") == true) 
+        {
+            //it's checked so increment the counter
+            totalChecked += 1;
+        }
+    }
+    //return the number of checked
+    return totalChecked
+}

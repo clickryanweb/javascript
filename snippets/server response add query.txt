@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+
+<script type="text/javascript">
+
+function relocate(select,attribName)
+{
+var addQuery = select.options[select.selectedIndex].value;
+if(!addQuery) return; /* no selection */
+//we need only yes
+if (addQuery==1){
+var currQuery = location.search.substring(1);
+location.href += (currQuery?"&":"?") + attribName+"="+addQuery;
+}
+
+}
+
+
+
+</script>
+</head>
+<body>
+<select onchange="relocate(this,'cc')"><option value="">Choose..<option value="1">Yes<option value="0">No</select>
+</body>
+</html>
